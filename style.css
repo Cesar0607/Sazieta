@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --preto: #131313;
+    --vinho: #dd1630;
+    --branco: #fff;
+
+}
+
+.marcador {
+    border-bottom: 3px solid var(--vinho);
+}
+
+/* Menu */
+
+.menu {
+    background: var(--preto);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.menu_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#logo {
+    color: var(--vinho);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.links_menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.itens_menu {
+    height: 80px;
+}
+
+.links {
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.botao_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: var(--vinho);
+    color: var(--branco);
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+.botao:hover {
+    opacity: 1;
+}
+
+.links:hover {
+    color: var(--vinho);
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    .menu_container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .links_menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+
+    .links_menu.ativar {
+        background: var(--preto);
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 60vh;
+        font-size: 1.6rem;
+    }
+
+    #logo {
+        padding-left: 25px;
+    }
+
+    .menu_mobile .barrinha {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: var(--branco);
+    }
+
+    .itens_menu {
+        width: 100%;
+    }
+
+    .links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    .botao_menu {
+        padding-bottom: 2rem;
+    }
+
+    .botao {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .menu_mobile .barrinha {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.esta-ativo .barrinha:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.esta-ativo .barrinha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.esta-ativo .barrinha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Fim Do Menu */
+
+/* Home */
+section {
+    padding: 2rem 9%;
+}
+
+section:nth-child(even) {
+    background: #181818;
+}
+
+
+.home .home_slider .slider {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.slider .conteudo {
+    flex: 1 1 45rem;
+}
+
+.slider .imagem_home {
+    flex: 1 1 45rem;
+}
+
+.slider .imagem_home img {
+    width: 100%;
+}
+
+.conteudo span {
+    color: var(--vinho);
+    font-size: 3rem;
+}
+
+.conteudo h3 {
+    color: var(--branco);
+    font-size: 5rem;
+}
+
+.conteudo p {
+    color: #a7a5a5;
+    padding: .5rem 0;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.botao_home {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--branco);
+    background: var(--vinho);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.botao_home:hover {
+    opacity: 1;
+    letter-spacing: .1px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--vinho) !important;
+}
+
+@media screen and (max-width: 1800px) {
+    .slider .conteudo {
+        flex: 1 1 20rem;
+    }
+
+    .slider .imagem_home {
+        flex: 1 1 20rem;
+    }
+}
+
+@media screen and (max-width: 1457px) {
+    .conteudo span {
+        font-size: 2.7rem;
+    }
+
+    .conteudo h3 {
+        font-size: 4.5rem;
+    }
+
+    .conteudo p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .conteudo h3 {
+        font-size: 3.7rem;
+    }
+
+    .conteudo p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 913px) {
+    .conteudo span {
+        font-size: 2.2rem;
+    }
+
+    .conteudo h3 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 819px) {
+    section {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .slider .imagem_home img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 437px) {
+    .conteudo span {
+        font-size: 2.1rem;
+    }
+
+    .conteudo h3 {
+        font-size: 2.5rem;
+    }
+
+    .conteudo p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Fim da Home */
+
+/* Cardápio */
+section.cardapio {
+    background: var(--preto);
+    min-height: 100vh;
+}
+
+.titulo {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 .5rem;
+    padding-top: 4rem;
+}
+
+.titulo span {
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--vinho);
+    padding: 1rem 0;
+    box-shadow: 0 .2rem .05rem var(--vinho);
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    list-style: none;
+}
+
+.controles .botoes {
+    margin: 1rem 2rem;
+    padding: .5rem 0;
+    border-bottom: .2rem solid var(--branco);
+    color: var(--branco);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.controles .botoes.botao-ativo,
+.controles .botoes:hover {
+    color: var(--vinho);
+    border-color: var(--vinho);
+}
+
+.cardapio .imagem-cardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.cardapio .imagem-cardapio .imagem {
+    width: 28rem;
+    margin: 2rem;
+    border: 3px solid var(--vinho);
+}
+
+.cardapio .imagem-cardapio .imagem img {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cardapio .imagem-cardapio .imagem a {
+    font-size: 2rem;
+    color: var(--branco);
+    padding: .5rem;
+    text-decoration: none;
+    cursor: default;
+}
+
+/* Fim do Cardápio */
+
+/* Reservar */
+.reservar {
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+.reservar form {
+    border-radius: 1rem;
+    background: var(--branco);
+    width: 85%;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.reservar form .inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.reservar form .inputs input,
+.reservar form .inputs select,
+.reservar form .inputs textarea {
+    padding: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--preto);
+    height: 4rem;
+    width: 49%;
+    margin: 1rem 0;
+    border: .1rem solid var(--preto);
+}
+
+.reservar form .inputs input:focus,
+.reservar form .inputs select:focus,
+.reservar form .inputs textarea:focus {
+    border: .2rem solid var(--red);
+}
+
+.reservar form .inputs textarea {
+    height: 20rem;
+    padding: 1rem;
+    resize: none;
+}
+
+.reservar form .inputs #mapa {
+    height: 20rem;
+    margin: 1rem 0;
+    width: 49%;
+}
+
+.botao_reservar {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--branco);
+    background: var(--vinho);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.botao_reservar:hover {
+    opacity: 1;
+    letter-spacing: .1px;
+}
+
+@media (max-width:740px) {
+
+    .reservar form .inputs input,
+    .reservar form .inputs select,
+    .reservar form .inputs textarea,    
+    .reservar form .inputs #mapa {
+        width: 100%;
+    }
+
+    .botao_reservar {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width:400px) {
+    .reservar form {
+        width: 95%;
+    }
+
+    .botao_reservar {
+        font-size: 1.2rem;
+    }
+}
+
+/* Fim do Reservar */
